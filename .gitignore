@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Vagrant
+.vagrant/
+
+# Large captures 
+*.pcap
+*.pcapng
+
+# Word temp/lock files
+~$*.docx
+~$*.doc
+
+# OS junk
+Thumbs.db
+.DS_Store
