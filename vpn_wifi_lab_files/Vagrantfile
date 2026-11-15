@@ -1,0 +1,72 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# Virtual lab for "Empirical Evaluation of VPN Protocols on Public Wi-Fi".
+# Provider: VMware Workstation Pro (vagrant-vmware-desktop plugin).
+#
+# Topology (see docs/SETUP.md):
+#
+#   client  (10.10.0.10) --+
+#                          +-- CAFE network 10.10.0.0/24 -- gateway (10.10.0.254)
+#   attacker(10.10.0.66) --+                                   |
+#                                                              | TRANSIT network 10.20.0.0/24
+#                                                              |
+#                                                         vpnserver (10.20.0.2)
+#
+# The gateway also has the default Vagrant NAT adapter and reaches the real
+# internet through it. It forwards/NATs traffic for the client and the VPN server.
+
+BOX = "bento/ubuntu-24.04"
+
+CAFE_NET    = "10.10.0.0/24"
+TRANSIT_NET = "10.20.0.0/24"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = BOX
+  config.vm.box_check_update = false
+
+  # Do not sync the project folder into the VMs (avoids VMware shared folder problems).
+  # Scripts are pushed with explicit file provisioners instead.
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  # Common VMware settings
+  config.vm.provider "vmware_desktop" do |v|
+    v.gui = false
+    v.vmx["memsize"]  = "2048"
+    v.vmx["numvcpus"] = "2"
+  end
+
+
+  # ---------------------------------------------------------------- gateway
+  config.vm.define "gateway" do |m|
+    m.vm.hostname = "gateway"
+    m.vm.network "private_network", ip: "10.10.0.254",  auto_config: true   # CAFE side
+    m.vm.network "private_network", ip: "10.20.0.254",  auto_config: true   # TRANSIT side
+    m.vm.provision "shell", path: "scripts/provision/common.sh"
+    m.vm.provision "shell", path: "scripts/provision/gateway.sh"
+  end
+
+  # -------------------------------------------------------------- vpnserver
+  config.vm.define "vpnserver" do |m|
+    m.vm.hostname = "vpnserver"
+    m.vm.network "private_network", ip: "10.20.0.2", auto_config: true
+    m.vm.provision "shell", path: "scripts/provision/common.sh"
+    m.vm.provision "shell", path: "scripts/provision/vpnserver.sh"
+  end
+
+  # ----------------------------------------------------------------- client
+  config.vm.define "client" do |m|
+    m.vm.hostname = "client"
+    m.vm.network "private_network", ip: "10.10.0.10", auto_config: true
+    m.vm.provision "shell", path: "scripts/provision/common.sh"
+    m.vm.provision "shell", path: "scripts/provision/client.sh"
+  end
+
+  # --------------------------------------------------------------- attacker
+  config.vm.define "attacker" do |m|
+    m.vm.hostname = "attacker"
+    m.vm.network "private_network", ip: "10.10.0.66", auto_config: true
+    m.vm.provision "shell", path: "scripts/provision/common.sh"
+    m.vm.provision "shell", path: "scripts/provision/attacker.sh"
+  end
+end
