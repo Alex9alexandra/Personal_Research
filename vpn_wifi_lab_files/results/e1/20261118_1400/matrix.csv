@@ -1,0 +1,6 @@
+config,runs,r_dns_name,dns_name_label,r_sni,sni_label,r_dst_ip,dst_ip_label,vpn_signature,mean_packets
+B,5,1.0,visible,1.0,visible,1.0,visible,none,65
+D,5,0.0,hidden,1.0,visible,1.0,visible,none,92
+W,5,0.0,hidden,0.0,hidden,0.0,hidden,WireGuard,515
+O,5,0.0,hidden,0.0,hidden,0.0,hidden,OpenVPN,449
+I,5,0.0,hidden,0.0,hidden,0.0,hidden,ESP,416

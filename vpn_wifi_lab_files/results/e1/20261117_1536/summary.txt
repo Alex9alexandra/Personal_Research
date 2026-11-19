@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/e1_analyze.py", line 60, in <module>
+    w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+                                          ~~~~^^^
+IndexError: list index out of range

@@ -1,0 +1,49 @@
+profile,config,metric,n,mean,sd,ci95,vs_B
+good,B,cpu_s_per_gb,10,0.273,0.143,0.103,
+good,W,cpu_s_per_gb,10,1.548,0.892,0.638,+1.28
+good,O,cpu_s_per_gb,10,2.027,1.024,0.732,+1.75
+good,I,cpu_s_per_gb,10,0.566,0.183,0.131,+0.29
+good,B,rtt_ms,10,21.2,0.544,0.389,
+good,W,rtt_ms,10,21.738,0.397,0.284,+0.54
+good,O,rtt_ms,10,21.768,0.553,0.396,+0.57
+good,I,rtt_ms,10,21.48,0.418,0.299,+0.28
+good,B,tcp_down_mbps,10,93.873,0.578,0.414,
+good,W,tcp_down_mbps,10,89.93,0.35,0.25,4.2 % slower
+good,O,tcp_down_mbps,10,89.471,2.482,1.776,4.7 % slower
+good,I,tcp_down_mbps,10,90.499,0.262,0.187,3.6 % slower
+good,B,tcp_up_mbps,10,93.173,1.457,1.042,
+good,W,tcp_up_mbps,10,87.901,3.695,2.643,5.7 % slower
+good,O,tcp_up_mbps,10,90.231,0.083,0.059,3.2 % slower
+good,I,tcp_up_mbps,10,89.916,0.647,0.463,3.5 % slower
+good,B,udp_jitter_ms,10,0.382,0.063,0.045,
+good,W,udp_jitter_ms,10,0.367,0.098,0.07,-0.02
+good,O,udp_jitter_ms,10,0.378,0.088,0.063,-0.00
+good,I,udp_jitter_ms,10,0.358,0.102,0.073,-0.02
+good,B,udp_loss_pct,10,0.0,0.0,0.0,
+good,W,udp_loss_pct,10,0.0,0.0,0.0,+0.00
+good,O,udp_loss_pct,10,0.0,0.0,0.0,+0.00
+good,I,udp_loss_pct,10,0.0,0.0,0.0,+0.00
+weak,B,cpu_s_per_gb,10,31.607,23.369,16.716,
+weak,W,cpu_s_per_gb,10,63.573,44.091,31.539,+31.97
+weak,O,cpu_s_per_gb,10,53.179,24.124,17.256,+21.57
+weak,I,cpu_s_per_gb,10,81.38,46.214,33.057,+49.77
+weak,B,rtt_ms,10,102.33,4.793,3.429,
+weak,W,rtt_ms,10,101.212,3.237,2.316,-1.12
+weak,O,rtt_ms,10,100.915,2.388,1.708,-1.42
+weak,I,rtt_ms,10,102.53,3.108,2.223,+0.20
+weak,B,tcp_down_mbps,10,1.677,0.663,0.474,
+weak,W,tcp_down_mbps,10,1.342,0.65,0.465,20.0 % slower
+weak,O,tcp_down_mbps,10,1.195,0.443,0.317,28.7 % slower
+weak,I,tcp_down_mbps,10,0.86,0.287,0.205,48.8 % slower
+weak,B,tcp_up_mbps,10,1.695,0.654,0.468,
+weak,W,tcp_up_mbps,10,1.228,0.758,0.542,27.5 % slower
+weak,O,tcp_up_mbps,10,1.127,0.446,0.319,33.5 % slower
+weak,I,tcp_up_mbps,10,1.212,0.448,0.321,28.5 % slower
+weak,B,udp_jitter_ms,10,2.003,0.289,0.206,
+weak,W,udp_jitter_ms,10,2.176,0.656,0.47,+0.17
+weak,O,udp_jitter_ms,10,2.01,0.332,0.238,+0.01
+weak,I,udp_jitter_ms,10,2.17,0.439,0.314,+0.17
+weak,B,udp_loss_pct,10,2.09,0.152,0.109,
+weak,W,udp_loss_pct,10,2.141,0.154,0.11,+0.05
+weak,O,udp_loss_pct,10,2.065,0.314,0.225,-0.03
+weak,I,udp_loss_pct,10,1.971,0.303,0.217,-0.12

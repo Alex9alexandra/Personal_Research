@@ -1,0 +1,13 @@
+config,profile,metric,rep,value
+I,good,tcp_up_mbps,1,89.0094791578916
+I,good,tcp_down_mbps,1,89.4478047363088
+I,good,cpu_s_per_gb,1,0.298023
+I,good,udp_jitter_ms,1,0.48506874316941234
+I,good,udp_loss_pct,1,0
+I,good,rtt_ms,1,21.718
+I,weak,tcp_up_mbps,1,0.6711272969323032
+I,weak,tcp_down_mbps,1,1.0481721043491241
+I,weak,cpu_s_per_gb,1,50.8626
+I,weak,udp_jitter_ms,1,1.5706103881270479
+I,weak,udp_loss_pct,1,2.0817843866171
+I,weak,rtt_ms,1,99.680

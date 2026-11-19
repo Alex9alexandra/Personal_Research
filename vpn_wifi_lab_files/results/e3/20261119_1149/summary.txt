@@ -1,0 +1,4 @@
+config  recovered  recovery_s  N_leak  W_exp_s  leaked_to
+I       yes        0.3         0       0.00     
+O       yes        0.5         0       0.00     
+W       yes        0.3         0       0.00     

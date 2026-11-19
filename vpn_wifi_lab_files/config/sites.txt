@@ -1,0 +1,6 @@
+# Websites for the case study (public HTTPS, no login). One hostname per line.
+en.wikipedia.org
+github.com
+www.python.org
+stackoverflow.com
+www.bbc.com

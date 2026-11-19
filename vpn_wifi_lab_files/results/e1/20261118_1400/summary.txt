@@ -1,0 +1,6 @@
+config  runs  DNS-name      SNI           dst-IP        VPN seen        pkts
+B       5     1.0 visible   1.0 visible   1.0 visible   none            65
+D       5     0.0 hidden    1.0 visible   1.0 visible   none            92
+W       5     0.0 hidden    0.0 hidden    0.0 hidden    WireGuard       515
+O       5     0.0 hidden    0.0 hidden    0.0 hidden    OpenVPN         449
+I       5     0.0 hidden    0.0 hidden    0.0 hidden    ESP             416
